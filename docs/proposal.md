@@ -24,7 +24,7 @@ Evaluation Plan
 The success of our project will be evaluated based on how well the minecraft player is able to recreate the label of the object that appears in the photograph taken by the user. This means that the focus will not be on creating a minecraft object that looks identical to the object in the photograph, but rather one that shares similar features.
 
 1. Quantitative Analysis
-We will have quantitative analysis for each of the three AIs: We will have a 
+We will have quantitative analysis for each of the three AIs: We will measure the success rate of being able to convert the image to a label, being able to generate a 2D representation of the object, and being able to build the object. We will gather this data by building a variety of objects, running multiple times.
 2. Qualitative Analysis
 Some sanity cases are: if we take a picture of a rock on our phone, does it actually build a rock?  Rocks are fairly simple objects, so if our AI can’t build a rock, it probably can’t build something as complex as a tree.  
 Since our AI is really a couple of AI’s working together, we have to make sure all the components of the AI work right. Here are the components and the necessary tests to see if they work right:
