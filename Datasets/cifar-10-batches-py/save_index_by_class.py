@@ -69,6 +69,7 @@ def save_index_test_images(labelName, label):
 
 
 if __name__ == "__main__":
+    #Takes class labelname as command line argument
 
     labelName = sys.argv[1]
     label = get_label_index(labelName)
