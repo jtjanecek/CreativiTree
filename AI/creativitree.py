@@ -33,18 +33,11 @@ d = {'G':'leaves', 'B':'log'}
 Return a layout of a tree in a 2D array
 '''
 def getNextLayout():
-    # DEFAULT LAYOUT TO GENERATE (ODD)
     layout1 = [['G', 'G', 'G','G','G'],
                   ['', '', 'B','',''],
                   ['', '', 'B','',''],
                   ['', '', 'B','','']
-                 ]
-    # DEFAULT LAYOUT TO GENERATE (EVEN)
-    layout2 = [['G', 'G', 'G', 'G'],
-                  ['', 'B', 'B', ''],
-                  ['', 'B', 'B', ''],
-                  ['', 'B', 'B', '']
-                 ]    
+                 ]  
     return layout1
 
 
