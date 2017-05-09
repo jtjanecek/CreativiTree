@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Andres Vourakis
 ***UCI Net ID***: avouraki
 
-## USER 2
+## John Janecek
 ***UCI Net ID***: janecekj
 
-## USER 3
+## Katie Bui
 ***UCI Net ID***: kgbui

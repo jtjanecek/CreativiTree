@@ -3,7 +3,8 @@ layout: default
 title:  Home
 ---
 
-Welcome to SnapCraft! We Snap, and we Craft!
+Welcome to CreativiTree!
 
-Enjoy your stay.
+We generate trees. They look cool.
+
 
