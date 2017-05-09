@@ -8,6 +8,7 @@ import os
 import sys
 import time
 import random
+from creativitreeAgent import getNextLayout
 
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
 
@@ -26,21 +27,6 @@ if agent_host.receivedArgument("help"):
 
 # DICTIONARY OF COLOR -> BLOCKS
 d = {'G':'leaves', 'B':'log'}
-
-
-
-'''
-Return a layout of a tree in a 2D array
-'''
-def getNextLayout():
-    layout1 = [['G', 'G', 'G','G','G'],
-                  ['', '', 'B','',''],
-                  ['', '', 'B','',''],
-                  ['', '', 'B','','']
-                 ]  
-    return layout1
-
-
 
 
 '''
