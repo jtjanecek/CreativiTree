@@ -44,7 +44,7 @@ def save_train_images(labelName, label):
                 indexFile.write(str(index) + '\n')
                 pixels.append(dict[b'data'][index])
     
-        pickle.dump(np.array(pixels), dataFile) # Pickle numpy array of pixels
+        pickle.dump(np.array(pixels), dataFile, protocol=2) # Pickle numpy array of pixels
 
 def save_index_test_images(labelName, label):
     #Find the indexes of the images corresponding to the label and save them into a text file
@@ -60,7 +60,7 @@ def save_index_test_images(labelName, label):
                 indexFile.write(str(index) + '\n')
                 pixels.append(dict[b'data'][index])
     
-        pickle.dump(np.array(pixels), dataFile) #Pickle numpy array of pixels
+        pickle.dump(np.array(pixels), dataFile, protocol=2) #Pickle numpy array of pixels
 
 if __name__ == "__main__":
 
