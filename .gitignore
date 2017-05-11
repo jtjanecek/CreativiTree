@@ -2,3 +2,5 @@ _site/
 .sass-cache/
 .jekyll-metadata
 Datasets/bg_removal/trees_to_remove_bg/
+Datasets/backup_datasets
+
