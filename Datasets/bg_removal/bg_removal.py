@@ -1,5 +1,5 @@
 '''
-Author: jedwards
+Original Code by jedwards
 Source: http://stackoverflow.com/questions/29313667/how-do-i-remove-the-background-from-this-kind-of-image
 '''
 
