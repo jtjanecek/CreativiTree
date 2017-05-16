@@ -1,6 +1,11 @@
 '''
 Original Code by jedwards
 Source: http://stackoverflow.com/questions/29313667/how-do-i-remove-the-background-from-this-kind-of-image
+Note: This code has been modified to implement extra features
+'''
+
+'''
+opencv issues: https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/zQjANEHPcJ0
 '''
 
 import cv2
@@ -19,9 +24,10 @@ MASK_COLOR = (0.0,0.0,1.0) # In BGR format
 #== Processing =======================================================================
 
 #-- Read image -----------------------------------------------------------------------
-numImages = 2500 # Total number of images to iterate through
+numImages = 2 # Total number of images to iterate through
 
 for i in range(1, numImages + 1):
+    print(i)
     img = cv2.imread('trees_to_remove_bg/tree' + str(i) + '.png')
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
@@ -32,7 +38,11 @@ for i in range(1, numImages + 1):
 
     #-- Find contours in edges, sort by area ---------------------------------------------
     contour_info = []
-    contours, _ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+
+    contours,_ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE) #Gives ValueError
+    #See: http://stackoverflow.com/questions/25504964/opencv-python-valueerror-too-many-values-to-unpack
+    #_, contours,_ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE) Possible solution to ValueError
+
     for c in contours:
         contour_info.append((
             c,
@@ -65,12 +75,14 @@ for i in range(1, numImages + 1):
 
     #-- Check with user if bg was removed correctly -------------------------------------
 
+    answer = str(raw_input('Was BG removal succesful? [y/n]: '))
+
     #If Yes, overwrite original image with masked image
-    if(True):
-        cv2.imwrite('/trees_to_remove_bg/tree' + str(i) '.png', masked)           # Save
+    if(answer.lower() == 'y'):
+        cv2.imwrite('/trees_to_remove_bg/tree' + str(i) + '.png', masked) # Save
 
     #If No, move original image to /failed folder
     else:
-        os.rename('/trees_to_remove_bg/tree' + str(i) '.png', '/trees_to_remove_bg/failed/tree' + str(i) '.png')
+        os.rename('/trees_to_remove_bg/tree' + str(i) + '.png', '/trees_to_remove_bg/failed/tree' + str(i) + '.png')
 
     
