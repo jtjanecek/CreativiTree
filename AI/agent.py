@@ -43,12 +43,16 @@ def array_to_image(array):
 	return img
 
 counter = 0 
-asdf = {0:'trees/tt1.png',1:'trees/tt2.png',2:'trees/tt3.png', 3:'trees/tt4.png',4:'trees/tt5.png'}
+asdf = ['trees/tt1.png','trees/tt2.png','trees/tt3.png','trees/tt4.png','trees/tt5.png',
+	'trees/tt6.png']
+
 
 def get_next_image():
     global counter
     arr = image_to_array(asdf[counter])
     counter+=1
+    if counter == 6:
+        counter = 0
     return arr
 
 def getNextLayout():
@@ -63,18 +67,13 @@ def getNextLayout():
             row.append(color)
         full_layout.append(row)
     return full_layout
-
+    ''' Layout EXAMPLE
     layout1 = [['GREEN', 'GREEN', 'GREEN','GREEN','GREEN'],
                   ['', '', 'BROWN','',''],
                   ['', '', 'BROWN','',''],
                   ['', '', 'BROWN','','']
-                 ]  
-    return layout1
+                 ]
+    '''
 
 
-
-f = open('keymap.txt','w')
-for key, name in webcolors.css3_hex_to_names.items():
-	f.write('ColorMap[' + key + '] = ' + "'" + name + "'" + '\n')	
-f.close()
 

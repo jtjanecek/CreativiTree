@@ -100,7 +100,7 @@ def renderForest():
         baseLR = 0
         baseNS -= getChange(layout)
         #for i in range(10):
-	for i in range(3):
+	for i in range(7):
             layout = getNextLayout()
             baseLR -= getChange(layout)
             result += renderTree(baseLR, baseHeight, baseNS + getChange(layout), layout)
