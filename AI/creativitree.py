@@ -8,7 +8,8 @@ import os
 import sys
 import time
 import random
-from creativitreeAgent import getNextLayout
+from agent import getNextLayout
+
 
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
 
@@ -25,15 +26,15 @@ if agent_host.receivedArgument("help"):
     print agent_host.getUsage()
     exit(0)
 
-# DICTIONARY OF COLOR -> BLOCKS
-d = {'G':'leaves', 'B':'log'}
+
 
 
 '''
 Returns the block XML given the x,y,z coordinates and the kind of block
 '''
-def getBlockXML(x, y, z, kind):
-    return '<DrawBlock x="' + str(x) + '" y="' + str(y) + '" z="' + str(z) + '" type="' + str(kind) + '"/>'
+def getBlockXML(x, y, z, color):
+    #return '<DrawBlock x="' + str(x) + '" y="' + str(y) + '" z="' + str(z) + '" type="' + str(kind) + '"/>'    
+    return '<DrawBlock x="' + str(x) + '" y="' + str(y) + '" z="' + str(z) + '" type="' + 'wool"' + ' colour="' + str(color)  + '"/>'
 
 '''
 Returns an XML string representation of a tree given a 2D matrix layout
@@ -47,21 +48,21 @@ def renderTreeWithRotation(x, y, z, layout):
         for count2, j in enumerate(range(len(layout[i]))):
             s = layout[i][j]
             if s != '':
-                result += getBlockXML(x + count2, y + count, z, d[s])
+                result += getBlockXML(x + count2, y + count, z, s)
     if len(layout[0]) % 2 == 1:
         #Second rotation and odd
         for count, i in enumerate(range(len(layout)-1,-1,-1)):
             for count2, j in enumerate(range(len(layout[i]))):
                 s = layout[i][j]
                 if s != '':
-                    result += getBlockXML(x + 1, y + count, z + count2 - 1, d[s])    
+                    result += getBlockXML(x + 1, y + count, z + count2 - 1, s)    
     else:
         #Second rotation and even
         for count, i in enumerate(range(len(layout)-1,-1,-1)):
             for count2, j in enumerate(range(len(layout[i]))):
                 s = layout[i][j]
                 if s != '':
-                    result += getBlockXML(x + 1, y + count, z + count2 - 1, d[s])        
+                    result += getBlockXML(x + 1, y + count, z + count2 - 1, s)        
     
     return result
 
@@ -76,11 +77,11 @@ def renderTree(x, y, z, layout):
         for count2, j in enumerate(range(len(layout[i]))):
             s = layout[i][j]
             if s != '': # If s is not empty, generate the block, and the depth blocks
-                result += getBlockXML(x + count2, y + count, z, d[s])
+                result += getBlockXML(x + count2, y + count, z, s)
 
                 # depth blocks
-                for k in range(len(layout[i])): # TODO: subtract size of trunk
-                     result += getBlockXML(x + count2, y + count, z + k, d[s])
+                #for k in range(len(layout[i])): # TODO: subtract size of trunk
+                #     result += getBlockXML(x + count2, y + count, z + k, s)
     return result
 
 
@@ -94,10 +95,12 @@ def renderForest():
     layout = getNextLayout()
     result = ''
     result += renderTree(baseLR, baseHeight, baseNS, getNextLayout())
-    for i in range(10):
+    #for i in range(10):
+    for i in range(1):
         baseLR = 0
         baseNS -= getChange(layout)
-        for i in range(10):
+        #for i in range(10):
+	for i in range(3):
             layout = getNextLayout()
             baseLR -= getChange(layout)
             result += renderTree(baseLR, baseHeight, baseNS + getChange(layout), layout)
@@ -127,7 +130,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 </ServerInitialConditions>
 
                 <ServerHandlers>
-                  <FlatWorldGenerator generatorString="3;7,220*1,5*3,2;3;,biome_1"/>
+                  <FlatWorldGenerator generatorString="3;7,220*1,5*3,2;3;,biome_1" forceReset="true"/>
 
                   <DrawingDecorator>''' + renderForest() + '''</DrawingDecorator>
                   <ServerQuitFromTimeUp timeLimitMs="1000"/>
