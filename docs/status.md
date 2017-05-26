@@ -31,14 +31,22 @@ In the future, we would remove the background before training the GAN, instead o
 **Malmo**
 We used the Python Imaging Library to convert each image to RGB representations in Python. We then used the webcolors API, to convert each pixel to a color that can be rendered in Minecraft. At first, we needed to tweak the colors so that it would accurately convert to the correct colors, and the resulting (unscaled) images are as follows:
 
-**unscaled full images**
 
 Next, we scaled the representations into 10x10 models, which looked kind of strange, but they were player size. Something we could improve on is scaling the images to look more like the unscaled versions.
 
 The results of our prototype:
 
-**forest images**
+**Unscaled 32x32 tree images converted into Minecraft:**
+![t1](/t1_unscaled_full.png)
 
+![t5](/t5_unscaled_full.png)
+
+**Scaled 10x10 trees in Minecraft (player size):**
+![t3](/t3_scaled_full.png)
+
+![t6](/t6_scaled_full.png)
+**Final product**
+![trees](/treeImage.png)
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
