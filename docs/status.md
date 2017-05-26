@@ -18,12 +18,25 @@ CreativiTree is fed thousands of images of trees using deep learning techniques 
 Following the orginal work of Ian Goodfellow on ["Generative Adverserial Networks"](https://arxiv.org/pdf/1406.2661.pdf), and consequently the work of several researchers from the University of Michigan on ["Generative Adversarial Text to Image Synthesis"](https://arxiv.org/pdf/1605.05396.pdf), this project focuses mainly on Image Systhesis \(Hallucinating Images\) and further explore its applications.
 
 **The Learning**  
-In order for CreativiTree to "learn" about trees, we used a TensorFlow implementation of Deep Convolutional Generative Adverserial Network (DCGAN) that we found on [github](https://github.com/carpedm20/DCGAN-tensorflow). This, along with thousands of 32x32 color tree images from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).
+In order for CreativiTree to "learn" about trees, we used a TensorFlow implementation of Deep Convolutional Generative Adverserial Network (DCGAN) that we found on [github](https://github.com/carpedm20/DCGAN-tensorflow). This, along with thousands of 32x32 color tree images from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html). 
 
-**Hallucinating**
+We trained the DCGAN with around 45 epochs. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself. 
 
+** Epoch Image**
 
-**Show Image here**
+In the future, we would remove the background before training the GAN, instead of removing the background when we process the image in Malmo. 
+
+**Malmo**
+We used the Python Imaging Library to convert each image to RGB representations in Python. We then used the webcolors API, to convert each pixel to a color that can be rendered in Minecraft. At first, we needed to tweak the colors so that it would accurately convert to the correct colors, and the resulting (unscaled) images are as follows:
+
+** unscaled full images **
+
+Next, we scaled the representations into 10x10 models, which looked kind of strange, but they were player size. Something we could improve on is scaling the images to look more like the unscaled versions.
+
+The results of our prototype:
+
+** forest images**
+
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
