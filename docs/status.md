@@ -20,22 +20,24 @@ Following the orginal work of Ian Goodfellow on ["Generative Adverserial Network
 **The Learning**  
 In order for CreativiTree to "learn" about trees, we used a TensorFlow implementation of Deep Convolutional Generative Adverserial Network (DCGAN) that we found on [github](https://github.com/carpedm20/DCGAN-tensorflow). This, along with thousands of 32x32 color tree images from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html). 
 
-We trained the DCGAN with around 45 epochs. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself. 
+We trained the DCGAN and found the higher number of epochs the better in general. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself. 
 
-** Epoch Image**
+![epoch_2](./epoch_2.png)
+![epoch_10](./epoch_10.png)
+![epoch_75](./epoch_75.png)
 
 In the future, we would remove the background before training the GAN, instead of removing the background when we process the image in Malmo. 
 
 **Malmo**
 We used the Python Imaging Library to convert each image to RGB representations in Python. We then used the webcolors API, to convert each pixel to a color that can be rendered in Minecraft. At first, we needed to tweak the colors so that it would accurately convert to the correct colors, and the resulting (unscaled) images are as follows:
 
-** unscaled full images **
+**unscaled full images**
 
 Next, we scaled the representations into 10x10 models, which looked kind of strange, but they were player size. Something we could improve on is scaling the images to look more like the unscaled versions.
 
 The results of our prototype:
 
-** forest images**
+**forest images**
 
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
@@ -49,5 +51,9 @@ The results of our prototype:
 
 Our prototype currently uses an off the shelf DCGAN in order to perform image synthesis. Our main objective over the next 2-3 weeks is to code our own Generative Adversarial Neural Network and have more flexibility when it comes to improving its individual parts in order to hallucinate more realistic looking trees.
 
-In addition, we would like to expand our DCGAN to generate images of objects other than trees. [write more]
+We would like to remove the backgrounds from the dataset before training, as some of our epochs showed that the GAN was actually learning from the background instead of the tree image and shape itself (sometimes it was pure blue as in the sky).
+
+In scaling the images, we would like to make the scaled versions of the images more realistic, and more representative of the unscaled images in Minecraft.
+
+In addition, we would like to expand our DCGAN to generate images of objects other than trees. 
 
