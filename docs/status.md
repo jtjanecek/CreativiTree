@@ -22,9 +22,9 @@ In order for CreativiTree to "learn" about trees, we used a TensorFlow implement
 
 We trained the DCGAN and found the higher number of epochs the better in general. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself. 
 
-![epoch_2](./epoch_2.png)
-![epoch_10](./epoch_10.png)
-![epoch_75](./epoch_75.png)
+![epoch_2](/epoch_2.png)
+![epoch_10](/epoch_10.png)
+![epoch_75](/epoch_75.png)
 
 In the future, we would remove the background before training the GAN, instead of removing the background when we process the image in Malmo. 
 
