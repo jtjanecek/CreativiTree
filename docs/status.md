@@ -40,11 +40,13 @@ Next, we scaled the representations into 10x10 models, which looked kind of stra
 The results of our prototype:
 
 **Unscaled 32x32 tree images converted into Minecraft:**
+
 ![t1](/t1_unscaled_full.png)
 ![t5](/t5_unscaled_full.png)
 ![t3](/t3_unscaled_full.png)
 
 **Scaled 10x10 trees in Minecraft (player size):**
+
 ![t1](/t1_scaled_full.png)
 ![t5](/t5_scaled_full.png)
 ![t3](/t3_scaled_full.png)
@@ -63,7 +65,7 @@ A large part of our evaluation is qualitative and we broke it down into two part
 
 2.  Do the Minecraft representations of the trees look like trees, and are they similar to the original images? 
 
-For the first evaluation, we analyzed the results of generator given different epochs.  We have trained on around 70 epochs, and as the epochs approached 60, the images the GAN was generating were realistic. Once the epochs reached 70, they started learning the backgrounds of the trees, and generating strange looking trees, like they were on fire or pure blue sky. The resulting images were hit and miss, but we got some good images that worked in Minecraft. 
+For the first evaluation, we analyzed the results of generator given different epochs.  At first we trained the DCGAN using 35 epochs, which gave us somewhat-realistic looking images.  After that we trained it using 45 epochs, which yielded even better results.  From then on we trained an additional 65 epochs, which started to develop detailed and even more realistic-looking results.  However, as the epochs approached 100, the GAN started learning the backgrounds of the trees, and generating strange looking trees, like they were on fire or pure blue sky. Images that came out of this 110-epoch neural net were hit-and-miss in the sense that some images looked good but others looked clearly strange, but as a whole we got enough samples for images that were suitable to use in Minecraft. 
 
 For the second evaluation, we converted the images into unscaled and scaled versions of the images in Minecraft. The unscaled images were much more realistic, and as seen above, they are quite good representations of the images! However, once we scaled the images down to 10x10 player size, the minecraft representation was not as similar to the original image, we think this is because of data loss in compressing the images, which dilutes the color in the image.
 
