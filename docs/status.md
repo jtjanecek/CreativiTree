@@ -29,6 +29,8 @@ We trained the DCGAN and found the higher number of epochs the better in general
 
 In the future, we would remove the background before training the GAN, instead of removing the background when we process the image in Malmo. 
 
+**youtube video here**
+
 **Malmo**
 We used the Python Imaging Library to convert each image to RGB representations in Python. We then used the webcolors API, to convert each pixel to a color that can be rendered in Minecraft. At first, we needed to tweak the colors so that it would accurately convert to the correct colors, and the resulting (unscaled) images are as follows:
 
@@ -40,10 +42,12 @@ The results of our prototype:
 **Unscaled 32x32 tree images converted into Minecraft:**
 ![t1](/t1_unscaled_full.png)
 ![t5](/t5_unscaled_full.png)
+![t3](/t3_unscaled_full.png)
 
 **Scaled 10x10 trees in Minecraft (player size):**
+![t1](/t1_scaled_full.png)
+![t5](/t5_scaled_full.png)
 ![t3](/t3_scaled_full.png)
-![t6](/t6_scaled_full.png)
 
 **Final product**
 
@@ -53,10 +57,15 @@ The results of our prototype:
 
 # Evaluation
 [comment]: <> (An important aspect of your project, as we mentioned in the beginning, is evaluating your project. Be clear and precise about describing the evaluation setup, for both quantitative and qualitative results. Present the results to convince the reader that you have a working implementation. Use plots, charts, tables, screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of evaluation that you perform.)
-A large part of our evaluation is qualitative: did our project generate trees that actually look like trees? Would a human player be able to tell they are trees in Minecraft? 
+A large part of our evaluation is qualitative and we broke it down into two parts:
 
-So far, some trees look like trees, but some trees were floating sticks of green or were just a green blob with holes in it. There is definitely room for improvement here.
+1.  Did our project generate tree images that actually look like trees? 
 
+2.  Do the Minecraft representations of the trees look like trees, and are they similar to the original images? 
+
+For the first evaluation, we analyzed the results of generator given different epochs.  We have trained on around 70 epochs, and as the epochs approached 60, the images the GAN was generating were realistic. Once the epochs reached 70, they started learning the backgrounds of the trees, and generating strange looking trees, like they were on fire or pure blue sky. The resulting images were hit and miss, but we got some good images that worked in Minecraft. 
+
+For the second evaluation, we converted the images into unscaled and scaled versions of the images in Minecraft. The unscaled images were much more realistic, and as seen above, they are quite good representations of the images! However, once we scaled the images down to 10x10 player size, the minecraft representation was not as similar to the original image, we think this is because of data loss in compressing the images, which dilutes the color in the image.
 
 # Remaining Goals and Challenges
 [comment]: <> (In a few paragraphs, describe your goals for the  next 2-3 weeks, when the final report is due. At the very least, describe how you consider your prototype to be limited, and what you want to add to make it a complete contribution. Note that if you think your algorithm is quite good, but have not performed sufficient evaluation, doing them can also be a reasonable goal. Similarly, you may propose some baselines \(such as a hand-coded policy\) that you did not get a chance to implement, but want to compare against for the final submission. Finally, given your experience so far, describe some of the challenges you anticipate facing by the time your final report is due, how crippling you think it might be, and what you might do to solve them.)
