@@ -6,7 +6,7 @@ title: Status
 Progress Report
 ===============
 Video Here:
-[![video](/treeImage.png)](https://www.youtube.com/watch?v=RbM2F-cfN0A)
+[![video](/treeImage.png)](https://www.youtube.com/watch?v=OwxblhmB4qs&feature=youtu.be)
 
 
 [Source]: <> (http://sameersingh.org/courses/aiproj/sp17/writeups/status.pdf)
