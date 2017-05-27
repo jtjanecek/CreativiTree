@@ -14,7 +14,7 @@ CreativiTree is a deep learning tool that "hallucinates" new images of Trees and
 CreativiTree is fed thousands of images of trees using generative adversarial networks in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo. 
 
 Video Here!
-[!video](/treeImage.png)(https://www.youtube.com/watch?v=RbM2F-cfN0A)
+[![video](/treeImage.png)](https://www.youtube.com/watch?v=RbM2F-cfN0A)
 
 # Approach
 [comment]: <> (Give a detailed description of your approach, in a few paragraphs. You should summarize the main algorithm you are using, such as by writing out the update equation \(even if it is off-the-shelf\). You should also give details about the approach as it applies to your scenario. For example, if you are using reinforcement learning for a given scenario, describe the MDP in detail, i.e. how many states/actions you have, what does the reward function look like. A good guideline is to incorporate sufficient details so that most of your approach is reproducible by a reader. I encourage you to use figures, as appropriate, for this, as I provided in the writeup for the first assignment \(available here: http://sameersingh.org/courses/aiproj/sp17/assignments.html#assignment1\). I recommend at least 2-3 paragraphs.)
