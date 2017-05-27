@@ -10,7 +10,8 @@ Progress Report
 
 # Project Summary
 [comment]: <> (Since things may have changed since proposal \(even if they haven’t\), write a short paragraph summarizing the goals of the project \(updated/improved version from the proposal\))
-CreativiTree is fed thousands of images of trees using deep learning techniques in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo. 
+CreativiTree is a deep learning tool that "hallucinates" new images of Trees and generates them for the player in-game.
+CreativiTree is fed thousands of images of trees using generative adversarial networks in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo. 
 
 # Approach
 [comment]: <> (Give a detailed description of your approach, in a few paragraphs. You should summarize the main algorithm you are using, such as by writing out the update equation \(even if it is off-the-shelf\). You should also give details about the approach as it applies to your scenario. For example, if you are using reinforcement learning for a given scenario, describe the MDP in detail, i.e. how many states/actions you have, what does the reward function look like. A good guideline is to incorporate sufficient details so that most of your approach is reproducible by a reader. I encourage you to use figures, as appropriate, for this, as I provided in the writeup for the first assignment \(available here: http://sameersingh.org/courses/aiproj/sp17/assignments.html#assignment1\). I recommend at least 2-3 paragraphs.)
@@ -45,12 +46,16 @@ The results of our prototype:
 ![t6](/t6_scaled_full.png)
 
 **Final product**
+
 ![trees](/treeImage.png)
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 # Evaluation
 [comment]: <> (An important aspect of your project, as we mentioned in the beginning, is evaluating your project. Be clear and precise about describing the evaluation setup, for both quantitative and qualitative results. Present the results to convince the reader that you have a working implementation. Use plots, charts, tables, screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of evaluation that you perform.)
+A large part of our evaluation is qualitative: did our project generate trees that actually look like trees? Would a human player be able to tell they are trees in Minecraft? 
+
+So far, some trees look like trees, but some trees were floating sticks of green or were just a green blob with holes in it. There is definitely room for improvement here.
 
 
 # Remaining Goals and Challenges

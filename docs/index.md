@@ -17,6 +17,9 @@ Furthermore, we build our own image-to-malmo python scripts which remove the bac
 
 This technique could be applied to things other than Trees, but for now we want to focus on trees, and that is why we are CreativiTree!
 
+![s1](/s1.png)
+![s2](/s2.png)
+
 Our github: http://github.com/jtjanecek/CreativiTree
 GAN library: http://github.com/carpedm20/DCGAN-tensorflow
 
