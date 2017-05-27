@@ -13,7 +13,7 @@ Progress Report
 CreativiTree is a deep learning tool that "hallucinates" new images of Trees and generates them for the player in-game.
 CreativiTree is fed thousands of images of trees using generative adversarial networks in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo. 
 
-Video Here!
+Video Here:
 [![video](/treeImage.png)](https://www.youtube.com/watch?v=RbM2F-cfN0A)
 
 # Approach
