@@ -16,6 +16,7 @@ ColorMap['#2e8b57'] = 'GREEN'
 ColorMap['#228b22'] = 'GREEN'
 ColorMap['#556b2f'] = 'GREEN'
 
+# GRAYS
 ColorMap['#808080'] = 'GRAY'
 ColorMap['#708090'] = 'GRAY'
 ColorMap['#a9a9a9'] = 'GRAY'
@@ -77,6 +78,8 @@ ColorMap['#008080'] = ''
 ColorMap['#0000cd'] = ''
 ColorMap['#000080'] = ''
 ColorMap['#008b8b'] = ''
+
+
 
 
 
@@ -189,7 +192,7 @@ ColorMap['#c0c0c0'] = ''
 
 
 
-# ADDITIONALS
+# ADDITIONALS ####################################################################
 
 # Dark browns
 ColorMap['#996633'] = 'BROWN'
@@ -207,7 +210,17 @@ ColorMap['#206040'] = 'GREEN'
 ColorMap['#194d33'] = 'GREEN'
 ColorMap['#2d8659'] = 'GREEN'
 
+# GREENISH BLUE
 
+ColorMap['#00664d'] = 'GREEN'
+ColorMap['#009973'] = 'GREEN'
+ColorMap['#003326'] = 'GREEN'
 
-
+# GRAYISH GREEN
+ColorMap['#2F4F4F'] = 'GREEN'
+ColorMap['#4F654F'] = 'GREEN'
+ColorMap['#475a47'] = 'GREEN'
+ColorMap['#839383'] = 'GREEN'
+ColorMap['#687568'] = 'GREEN'
+ColorMap['#475a47'] = 'GREEN'
 

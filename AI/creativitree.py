@@ -80,8 +80,9 @@ def renderTree(x, y, z, layout):
                 result += getBlockXML(x + count2, y + count, z, s)
 
                 # depth blocks
+		for k in range(3):
                 #for k in range(len(layout[i])): # TODO: subtract size of trunk
-                #     result += getBlockXML(x + count2, y + count, z + k, s)
+                     result += getBlockXML(x + count2, y + count, z + k, s)
     return result
 
 
@@ -100,7 +101,7 @@ def renderForest():
         baseLR = 0
         baseNS -= getChange(layout)
         #for i in range(10):
-	for i in range(7):
+	for i in range(5):
             layout = getNextLayout()
             baseLR -= getChange(layout)
             result += renderTree(baseLR, baseHeight, baseNS + getChange(layout), layout)
@@ -108,7 +109,7 @@ def renderForest():
 
 def getChange(layout):
     b = len(layout[0])
-    b += int(random.random()*5)
+    b += int(random.random()*10)
     return b
 
 

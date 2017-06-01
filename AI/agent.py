@@ -3,6 +3,7 @@ from PIL import Image
 from numpy import array
 #from colorMap import ColorMap
 from keymap import ColorMap
+import random
 
 #####################################################################
 # http://stackoverflow.com/questions/9694165/convert-rgb-color-to-english-color-name-like-green
@@ -42,18 +43,29 @@ def array_to_image(array):
 	img = Image.fromarray(arr)
 	return img
 
-counter = 0 
-asdf = ['trees/tt1.png','trees/tt2.png','trees/tt3.png','trees/tt4.png','trees/tt5.png',
-	'trees/tt6.png']
+pick = 2
+
+
+asdf = ['trees/tt1.png','trees/tt2.png','trees/tt3.png','trees/tt4.png','trees/tt5.png', 'trees/tt6.png']
+
+asdf_s = ['trees_small/tt1.png','trees_small/tt2.png','trees_small/tt3.png','trees_small/tt4.png',
+	'trees_small/tt5.png',	'trees_small/tt6.png']
+count = 0
 
 
 def get_next_image():
-    global counter
-    arr = image_to_array(asdf[counter])
-    counter+=1
-    if counter == 6:
-        counter = 0
-    return arr
+    global pick
+    if pick == 1:
+    	index = int(random.random() * len(asdf_s))
+    	arr = image_to_array(asdf_s[index])
+    	return arr
+    else:
+	global count	
+	arr = image_to_array(asdf[count])	
+	count += 1
+	if count == 6:
+		count = 0
+	return arr
 
 def getNextLayout():
     image = get_next_image()
