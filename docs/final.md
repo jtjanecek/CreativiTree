@@ -94,19 +94,6 @@ In addition to the new dataset, we also changed the learning rate to see if that
 ![epoch_10](/rate_2.png)
 ![epoch_75](/rate_3.png)
 
-epoch_original  epoch_learning_rate
-
-
-
-
-
-Overall, the best epochs looked like this:
-Default Settings                                  with Distorted Data                               Learning rate .0001
-
-
-
-
-
 **Malmo**
 We used the Python Imaging Library to convert each image to RGB representations in Python. We then used the webcolors API, to convert each pixel to a color that can be rendered in Minecraft. At first, we needed to tweak the colors so that it would accurately convert to the correct colors, and the resulting (unscaled) images are as follows:
 
