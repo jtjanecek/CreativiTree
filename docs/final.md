@@ -70,8 +70,7 @@ A quick overview of **neural networks**:
       self.writer.add_summary(summary_str, counter)
   ```
 
-**The Learning**  
-
+**The Learning & Training**  
 
 We trained the DCGAN and found the higher number of epochs the better in general. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself.
 
@@ -80,22 +79,20 @@ We trained the DCGAN and found the higher number of epochs the better in general
 ![epoch_75](/epoch_75.png)
 
 
-Since the status update, we wanted to make some changes to make the tree generation better.
-
 **Data Distortion**
-We added extra data by distorted our original dataset slightly. We were able to go from 2500 datapoints to _____ datapoints.
-Here are some of the new images generated:
+We added extra data by distorted our original dataset slightly. We were able to go from 2500 datapoints to 5500 datapoints. We were hoping that with the new increased dataset size, we could generate better trees.
+Here are some of the new epochs generated:
 
 ![epoch_2](/distorted_1.png)
 ![epoch_10](/distorted_2.png)
 ![epoch_75](/distorted_3.png)
 
-
-
-
 **Learning rate**
-In addition to the new dataset, we also changed the learning rate to see if that affected the tre generation.
+In addition to the new dataset, we also changed the learning rate to see if that affected the tre generation. Is it standard to use a low learning rate for neural networks, so we tried lowering the learning rate to see if it could generate better trees.
 
+![epoch_2](/rate_1.png)
+![epoch_10](/rate_2.png)
+![epoch_75](/rate_3.png)
 
 epoch_original  epoch_learning_rate
 
