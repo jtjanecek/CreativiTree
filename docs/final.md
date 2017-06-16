@@ -114,10 +114,37 @@ Next, we scaled the representations into 10x10 models, which looked kind of stra
 The results of our prototype:
 
 **Unscaled 32x32 tree images converted into Minecraft:**
+<slide>
+  <hgroup>
+    <h1>Title</h1>
+  </hgroup>
+  <article class="none">
+    <p>![t1](/t1_unscaled_full.png)</p>
+    <aside class="note">
+      Note
+    </aside>
+  </article>
+</slide>
 
-![t1](/t1_unscaled_full.png)
-![t5](/t5_unscaled_full.png)
-![t3](/t3_unscaled_full.png)
+<slide>
+  <hgroup>
+    <p>![t5](/t5_unscaled_full.png)</p>
+  </hgroup>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>![t3](/t3_unscaled_full.png)</h2>
+  </hgroup>
+  <article class="smaller">
+    <p>Content</p>
+  </article>
+</slide>
+
+
+
+
+
 
 **Scaled 10x10 trees in Minecraft (player size):**
 
