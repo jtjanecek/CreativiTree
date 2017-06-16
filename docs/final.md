@@ -139,7 +139,11 @@ The results of our prototype:
 [comment]: <> (An important aspect of your project, as we mentioned in the beginning, is evaluating your project. Be clear and precise about describing the evaluation setup, for both quantitative and qualitative results. Present the results to convince the reader that you have a working implementation. Use plots, charts, tables, screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of evaluation that you perform.)
 A large part of our evaluation is qualitative and we broke it down into two parts:
 
-1.  Did our project generate tree images that actually look like trees?
+**1.  Did our project generate tree images that actually look like trees?**
+
+For the first evaluation, we analyzed the results of generator given different epochs.  At first we trained the DCGAN using 35 epochs, which gave us somewhat-realistic looking images.  After that we trained it using 45 epochs, which yielded even better results.  From then on we trained an additional 65 epochs, which started to develop detailed and even more realistic-looking results.  However, as the epochs approached 100, the GAN started learning the backgrounds of the trees, and generating strange looking trees, like they were on fire or pure blue sky. Images that came out of this 110-epoch neural net were hit-and-miss in the sense that some images looked good but others looked clearly strange, but as a whole we got enough samples for images that were suitable to use in Minecraft.
+
+Once we found an appropriate amount of epochs for training, we had other variables we had to take into account for the DCGAN, such as dataset size, and hyperparameters of the model.
 
 In order to assess this, we did an experiment with two participants outside of our group. We asked both participants this question: does this image represent a tree?
 We used four datasets of 64 images each:
@@ -154,43 +158,21 @@ We used four datasets of 64 images each:
 
 The results:
 
-# Table 1
-	
-|                                 | Control | Original Dataset | Distorted Dataset | Low Learning Rate |
-|------------------------|--------------|----------------------------|------------------------------|------------------------------|
-| Participant 1    | 57            | 42                               | 43                                 | 37                                  |
-| Participant 2    | 59            | 21                               | 23                                 | 25                                  |
-| Average              | 58            | 32                               | 33                                 | 31                                  |
-
-# Table 2
-
 |               	| Control 	| Original Dataset 	| Distorted Dataset 	| Low Learning Rate 	|
 |---------------	|---------	|------------------	|-------------------	|-------------------	|
 | Participant 1 	| 57      	| 42               	| 43                	| 37                	|
 | Participant 2 	| 59      	| 21               	| 23                	| 25                	|
 | Average       	| 58      	| 32               	| 33                	| 31                	|
 
+Every DCGAN generated dataset was around 50%, whereas the control stayed above 90%. This means that half of the images generated from our DCGAN were identifiable as trees.
+This also shows that each model did not have a significant impact on the performance of the DCGAN. 
 
-2.  Do the Minecraft representations of the trees look like trees, and are they similar to the original images?
 
-For the first evaluation, we analyzed the results of generator given different epochs.  At first we trained the DCGAN using 35 epochs, which gave us somewhat-realistic looking images.  After that we trained it using 45 epochs, which yielded even better results.  From then on we trained an additional 65 epochs, which started to develop detailed and even more realistic-looking results.  However, as the epochs approached 100, the GAN started learning the backgrounds of the trees, and generating strange looking trees, like they were on fire or pure blue sky. Images that came out of this 110-epoch neural net were hit-and-miss in the sense that some images looked good but others looked clearly strange, but as a whole we got enough samples for images that were suitable to use in Minecraft.
+**2.  Do the Minecraft representations of the trees look like trees, and are they similar to the original images?**
 
 For the second evaluation, we converted the images into unscaled and scaled versions of the images in Minecraft. The unscaled images were much more realistic, and as seen above, they are quite good representations of the images! However, once we scaled the images down to 10x10 player size, the minecraft representation was not as similar to the original image, we think this is because of data loss in compressing the images, which dilutes the color in the image.
-
-## Plans and future steps
-
-Earlier in the quarter, we thought we could try to do the additional following things.  We did not include our changes as part of the final project because we did not successfully implement them, or we did not find that it was a high priority.
-
-1. Train the DCGAN on other objects, such as birds or trucks
-  * This wouldn't be actually difficult to do; pulling data from the CIFAR-100 is familiar to us.  But we thought that this would be a tedious and menial task that'd take up time to do other, more important tasks.
-2. Add more convolutional layers to the generator, discriminator, or both
-  * We tried to take away and add convolutional layers, but TensorFlow makes it a bit hard to figure out how to do this successfully.  If we were to try to edit the convolutional layers, we'd have to recalculate all of the dimensions of the convolutional layers.  We were willing to do this, but the problem was that TensorFlow gave unhelpful errors, and if we were to use print statements, it was difficult to figure out what the TensorFlow wrappers were trying to communicate.
-3. Trying out new loss functions, esp. Wasserstein distance to create WDCGANs
-  * [Papers](https://arxiv.org/abs/1701.07875) [on](http://www.alexirpan.com/2017/02/22/wasserstein-gan.html) [Wasserstein GANs](http://wiseodd.github.io/techblog/2017/02/04/wasserstein-gan/) seem simple at first: just change the loss function, right?  Well, it was more complicated than expected for reasons similar to #2.  Most papers on Wasserstein GANs are math-heavy and abstruse, which didn't help in implementing the loss function.  The last article just mentioned does instruct on converting a GAN into a WGAN, but there are "holes" that were frustrating to attempt filling.  One is that Wasserstein GANs don't use logits, or digits normalized by taking its log.  As a result, all of the loss functions would not use TensorFlow's sigmoid_cross_entropy_with_logits function.  However, there isn't an analogous function that _doesn't_ use logits!  On top of that, the instructions are still unclear as to what variables go where.
-  * Using the Wasserstein distance may provide an advantage to our model, as our model seems to stop improving at around 120-140 epochs (it gets worse from there).  That is probably when the nodes in the neural network are saturated, and we encounter the vanishing gradient problem.  However, if we use the Wasserstein distance with a lower learning rate, we could possibly end up with sharper, more realistic-looking trees because that loss function more or less has no vanishing gradient.  The longer we train the model, the better the results look, according to the researchers who pioneered it.
-
-However, had we more time, we would have tried to implement the above three improvements in our DCGAN.  For now, we would say that our experiments have created surprisingly good trees, and have performed much better than we expected.
 
 ## References
 
 We used the DCGAN github repository for our neural network, which can be found here:  https://github.com/carpedm20/DCGAN-tensorflow
+We also used a few resources to help with the image conversion and color maps for malmo: 
