@@ -133,7 +133,7 @@ The results of our prototype:
 
 ![trees](/treeImage.png)
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 
 ## Evaluation
 [comment]: <> (An important aspect of your project, as we mentioned in the beginning, is evaluating your project. Be clear and precise about describing the evaluation setup, for both quantitative and qualitative results. Present the results to convince the reader that you have a working implementation. Use plots, charts, tables, screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of evaluation that you perform.)
@@ -164,7 +164,7 @@ The results:
 | Participant 2 	| 59      	| 21               	| 23                	| 25                	|
 | Average       	| 58      	| 32               	| 33                	| 31                	|
 
-
+<br>
 Every DCGAN generated dataset was around 50%, whereas the control stayed above 90%. This means that half of the images generated from our DCGAN were identifiable as trees.
 This also shows that each model did not have a significant impact on the performance of the DCGAN. 
 
@@ -176,6 +176,8 @@ For the second evaluation, we converted the images into unscaled and scaled vers
 ## References
 
 We used the DCGAN github repository for our neural network, which can be found here:  https://github.com/carpedm20/DCGAN-tensorflow
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 We also used a few resources to help with the image conversion and color maps for malmo: 
 	 http://stackoverflow.com/questions/9694165/convert-rgb-color-to-english-color-name-like-green
