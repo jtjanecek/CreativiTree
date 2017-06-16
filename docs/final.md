@@ -164,6 +164,7 @@ The results:
 | Participant 2 	| 59      	| 21               	| 23                	| 25                	|
 | Average       	| 58      	| 32               	| 33                	| 31                	|
 
+
 Every DCGAN generated dataset was around 50%, whereas the control stayed above 90%. This means that half of the images generated from our DCGAN were identifiable as trees.
 This also shows that each model did not have a significant impact on the performance of the DCGAN. 
 
@@ -175,4 +176,7 @@ For the second evaluation, we converted the images into unscaled and scaled vers
 ## References
 
 We used the DCGAN github repository for our neural network, which can be found here:  https://github.com/carpedm20/DCGAN-tensorflow
+
 We also used a few resources to help with the image conversion and color maps for malmo: 
+	 http://stackoverflow.com/questions/9694165/convert-rgb-color-to-english-color-name-like-green
+
