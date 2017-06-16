@@ -171,7 +171,19 @@ For the second evaluation, we converted the images into unscaled and scaled vers
 
 **3. Quantitative: Loss fucntions of the Generator and Discriminator**
 
-We were able to get some 
+We were able to get some quantitative data on how the generator and discriminator were performing. Below are the loss functions for the Generator and Discriminator.
+
+**Generator**
+
+![gen_loss_img](/control_g_loss.png)
+
+**Discriminator**
+
+![disc_loss_img](/control_d_loss.png)
+
+These losses are hard to interpret. Nobody in the AI/ML community knows how to exactly interpret them, because we don't know exactly when DCGANs converge, and when to stop training them.
+
+We have this data, however it is not entirely useful.
 
 ## References
 
