@@ -86,7 +86,9 @@ Since the status update, we wanted to make some changes to make the tree generat
 We added extra data by distorted our original dataset slightly. We were able to go from 2500 datapoints to _____ datapoints.
 Here are some of the new images generated:
 
-tree1   tree2   tree3
+![epoch_2](/distorted_1.png)
+![epoch_10](/distorted_2.png)
+![epoch_75](/distorted_3.png)
 
 
 
