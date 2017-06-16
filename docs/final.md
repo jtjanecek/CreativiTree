@@ -12,16 +12,15 @@ Final Report
 
 ## Project Summary
 [comment]: <> (Since things may have changed since proposal \(even if they haven’t\), write a short paragraph summarizing the goals of the project \(updated/improved version from the proposal\))
-CreativiTree is a deep learning tool that "hallucinates" new images of Trees and generates them for the player in-game.
-CreativiTree is fed thousands of images of trees using generative adversarial networks in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo. 
+CreativiTree is a deep learning tool that "hallucinates" new never-seen images of trees and turns them into minecraft objects using Malmo.
+
+The techniques used in this project follow the orginal work of Ian Goodfellow on ["Generative Adverserial Networks"](https://arxiv.org/pdf/1406.2661.pdf), and consequently the work of Alec Radford, Luke Metzon and Soumith Chintala on ["Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"](https://arxiv.org/pdf/1511.06434.pdf), this project focuses mainly on Image Systhesis \(Hallucinating Images\) and further exploring its applications. In order for CreativiTree to "learn" about trees, we used a TensorFlow implementation of Deep Convolutional Generative Adverserial Network (DCGAN) that we found on [github](https://github.com/carpedm20/DCGAN-tensorflow). This, along with thousands of 32x32 color tree images from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html). The main challenge behind CreativiTree is to "Hallucinate" images of trees that look almost **indistinguishable** from real images of trees and then then accurately reproduce them inside the Minecraft world. 
 
 ## Approaches
 [comment]: <> (Give a detailed description of your approach, in a few paragraphs. You should summarize the main algorithm you are using, such as by writing out the update equation \(even if it is off-the-shelf\). You should also give details about the approach as it applies to your scenario. For example, if you are using reinforcement learning for a given scenario, describe the MDP in detail, i.e. how many states/actions you have, what does the reward function look like. A good guideline is to incorporate sufficient details so that most of your approach is reproducible by a reader. I encourage you to use figures, as appropriate, for this, as I provided in the writeup for the first assignment \(available here: http://sameersingh.org/courses/aiproj/sp17/assignments.html#assignment1\). I recommend at least 2-3 paragraphs.)
 
-Following the orginal work of Ian Goodfellow on ["Generative Adverserial Networks"](https://arxiv.org/pdf/1406.2661.pdf), and consequently the work of several researchers from the University of Michigan on ["Generative Adversarial Text to Image Synthesis"](https://arxiv.org/pdf/1605.05396.pdf), this project focuses mainly on Image Systhesis \(Hallucinating Images\) and further explore its applications.
-
 **The Learning**  
-In order for CreativiTree to "learn" about trees, we used a TensorFlow implementation of Deep Convolutional Generative Adverserial Network (DCGAN) that we found on [github](https://github.com/carpedm20/DCGAN-tensorflow). This, along with thousands of 32x32 color tree images from the [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html). 
+
 
 We trained the DCGAN and found the higher number of epochs the better in general. The generated trees started looking better and better, but towards the end, the trees started looking strange. We think this is because the DCGAN is learning the background of the images, instead of the tree itself. 
 
