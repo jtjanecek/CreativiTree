@@ -6,10 +6,8 @@ title: Final Report
 Final Report
 ===============
 ## Video
-<!---
-[![video](/treeImage.png)](https://www.youtube.com/watch?v=OwxblhmB4qs&feature=youtu.be)
--->
-
+[![Video](https://img.youtube.com/vi/OwxblhmB4qs/0.jpg)]
+(https://www.youtube.com/watch?v=OwxblhmB4qs)
 ## Project Summary
 [comment]: <> (Since things may have changed since proposal \(even if they haven’t\), write a short paragraph summarizing the goals of the project \(updated/improved version from the proposal\))
 CreativiTree is a deep learning tool that "hallucinates" new images of Trees and generates them for the player in-game.
