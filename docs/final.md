@@ -151,11 +151,11 @@ We used four datasets of 64 images each:
 
 The results:
 	
-|               | Control | Original Dataset | Distorted Dataset | Low Learning Rate |
-|---------------|---------|------------------|-------------------|-------------------|
-| Participant 1 | 57      | 42               | 43                | 37                |
-| Participant 2 | 59      | 21               | 23                | 25                |
-| Average       | 58      | 32               | 33                | 31                |
+|                                 | Control | Original Dataset | Distorted Dataset | Low Learning Rate |
+|------------------------|--------------|----------------------------|------------------------------|------------------------------|
+| Participant 1    | 57            | 42                               | 43                                 | 37                                  |
+| Participant 2    | 59            | 21                               | 23                                 | 25                                  |
+| Average              | 58            | 32                               | 33                                 | 31                                  |
 
 
 
