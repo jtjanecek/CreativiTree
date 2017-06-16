@@ -29,7 +29,32 @@ We trained the DCGAN and found the higher number of epochs the better in general
 ![epoch_10](/epoch_10.png)
 ![epoch_75](/epoch_75.png)
 
-In the future, we would remove the background before training the GAN, instead of removing the background when we process the image in Malmo. 
+
+Since the status update, we wanted to make some changes to make the tree generation better. 
+
+**Data Distortion**
+We added extra data by distorted our original dataset slightly. We were able to go from 2500 datapoints to _____ datapoints.
+Here are some of the new images generated:
+
+tree1   tree2   tree3
+
+
+
+
+**Learning rate**
+In addition to the new dataset, we also changed the learning rate to see if that affected the tre generation.
+
+
+epoch_original  epoch_learning_rate
+
+
+
+
+
+Overall, the best epochs looked like this:
+Default Settings                                  with Distorted Data                               Learning rate .0001
+
+
 
 
 
@@ -73,4 +98,4 @@ For the second evaluation, we converted the images into unscaled and scaled vers
 
 ## References
 
-
+We used the DCGAN github repository for our neural network, which can be found here:  https://github.com/carpedm20/DCGAN-tensorflow
