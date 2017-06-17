@@ -179,9 +179,7 @@ We were able to get some quantitative data on how the generator and discriminato
 
 ![disc_loss_img](/control_d_loss.png)
 
-These losses are hard to interpret. Nobody in the AI/ML community knows how to exactly interpret them, because we don't know exactly when DCGANs converge, and when to stop training them.
-
-We have this data, however it is not entirely useful.
+These losses are hard to interpret. So far, there is no accepted way to interpret them, because we don't know exactly when DCGANs converge, and when to stop training them. 
 
 ## References
 
