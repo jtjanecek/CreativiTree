@@ -124,7 +124,7 @@ The results of our prototype:
 ## Final product
 
 ![trees](/treeImage.png)
-
+![trees](/treeImage2.png)
 
 
 ## Evaluation
