@@ -114,7 +114,6 @@ The results of our prototype:
 ![t1](/tree_comp_1.png)
 ![t5](/tree_comp_2.png)
 
-**Scaled 10x10 trees in Minecraft (player size):**
 <!---
 ![t1](/t1_scaled_full.png)
 ![t5](/t5_scaled_full.png)
