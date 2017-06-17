@@ -16,7 +16,7 @@ Final Report
 We want to build computer generated trees in Minecraft. This would be a trivial problem if we simply wanted to convert images into object in Minecraft.
 However, we want to generate trees that have never been seen before -- unique and new trees. Thus, we need AI/ML algorithms to solve it. 
 
-Our main goal for our project is to generate the best images of trees to build in Minecraft. However, this goal is very difficult to achieve, because it adds more complexity in which finding which images work best in converting to Minecraft. Thus, our new goal is to generate trees using a GAN, which look the most like trees, then convert the best into Minecraft.  
+Our main goal for our project is to generate the best images of trees to build in Minecraft. However, this goal is very difficult to achieve, because it adds more complexity, which we did not want to take on at this time. This complexity involves finding which images look the best in Minecraft. This is a difficult task because the images that do not look like trees may look more like trees in Minecraft than realistic tree images. Thus, our new goal is to generate trees, which look the most like trees, then convert the best into Minecraft.  
 
 Our project, CreativiTree, is a deep learning tool that "hallucinates" new images of Trees and generates them for the player in-game.
 CreativiTree is fed thousands of images of trees using generative adversarial networks in order to "hallucinate" new images of trees and then turning them into minecraft objects using malmo.
@@ -26,7 +26,7 @@ CreativiTree is fed thousands of images of trees using generative adversarial ne
 ## Approaches
 [comment]: <> (Give a detailed description of your approach, in a few paragraphs. You should summarize the main algorithm you are using, such as by writing out the update equation \(even if it is off-the-shelf\). You should also give details about the approach as it applies to your scenario. For example, if you are using reinforcement learning for a given scenario, describe the MDP in detail, i.e. how many states/actions you have, what does the reward function look like. A good guideline is to incorporate sufficient details so that most of your approach is reproducible by a reader. I encourage you to use figures, as appropriate, for this, as I provided in the writeup for the first assignment \(available here: http://sameersingh.org/courses/aiproj/sp17/assignments.html#assignment1\). I recommend at least 2-3 paragraphs.)
 
-Following the orginal work of Ian Goodfellow on ["Generative Adverserial Networks"](https://arxiv.org/pdf/1406.2661.pdf), and consequently the work of several researchers from the University of Michigan on ["Generative Adversarial Text to Image Synthesis"](https://arxiv.org/pdf/1605.05396.pdf), this project focuses mainly on Image Systhesis \(Hallucinating Images\) and further explore its applications.
+Our project is using a DCGAN, which is a Deep Convolutional Generative Adversarial Neural Network. It consists of two separate neural networks who 'compete' against each other to generate and discriminate images.
 
 **What is a GAN, DCGAN, and "hallucinating" images?**
 
